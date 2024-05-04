@@ -1,4 +1,5 @@
 import { StyleSheet , Text, View } from "react-native";
+import styles from "../assets/styles/styles";
 
 export default function Habilidades() {
   return (
@@ -13,20 +14,3 @@ export default function Habilidades() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});

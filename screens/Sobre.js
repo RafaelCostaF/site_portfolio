@@ -1,4 +1,5 @@
 import { StyleSheet , Text, View } from "react-native";
+import styles from "../assets/styles/styles";
 
 export default function Sobre() {
   return (
@@ -24,9 +25,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
+  
 });

@@ -15,15 +15,18 @@ import Contato from "../screens/Contato";
 
 const BottomTab = createBottomTabNavigator();
 
-import IonIcon from '@reacticons/ionicons';
-
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      screenOptions={{ tabBarActiveTintColor: Colors[colorScheme].tint }}
+      screenOptions={{ 
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+        // tabBarStyle: { position: 'absolute', marginBottom:'100%' }
+        tabBarStyle: { position: 'absolute', bottom: 0, left: 0, right: 0, marginBottom: '100%' , backgroundColor:"#DAC0A3"}
+
+      }}
     >
       <BottomTab.Screen
         name="Home"
