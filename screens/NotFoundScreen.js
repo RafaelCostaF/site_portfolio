@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import styles from "../assets/styles/styles";
+import * as styles from "../assets/styles/styles.js";
 
 export default function NotFoundScreen({ navigation }) {
   return (

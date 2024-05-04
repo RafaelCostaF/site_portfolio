@@ -11,14 +11,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          Home: "Home", // Alterado de TabOneScreen para Home
-          Projetos: "Projetos", // Alterado de TabTwoScreen para Projetos
-          Sobre: "Sobre", // Adicionado
-          Habilidades: "Habilidades", // Adicionado
-          Contato: "Contato", // Adicionado
+          Home: "Home", 
+          Projetos: "Projetos", 
+          Sobre: "Sobre", 
+          Habilidades: "Habilidades", 
+          Contato: "Contato", 
         },
       },
-      NotFound: "*", // Mantido como estava
+      NotFound: "*", 
     },
   },
 };

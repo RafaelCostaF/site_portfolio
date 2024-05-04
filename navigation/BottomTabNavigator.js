@@ -24,7 +24,7 @@ export default function BottomTabNavigator() {
       screenOptions={{ 
         tabBarActiveTintColor: Colors[colorScheme].tint,
         // tabBarStyle: { position: 'absolute', marginBottom:'100%' }
-        tabBarStyle: { position: 'absolute', bottom: 0, left: 0, right: 0, marginBottom: '100%' , backgroundColor:"#DAC0A3"}
+        // tabBarStyle: { position: 'absolute', bottom: 0, left: 0, right: 0, marginBottom: '100%' , backgroundColor:"#DAC0A3"}
 
       }}
     >

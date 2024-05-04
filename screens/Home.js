@@ -1,7 +1,14 @@
-import { StyleSheet , Text, View } from "react-native";
-import styles from "../assets/styles/styles";
+import { Text, View } from "react-native";
+import * as styles from "../assets/styles/styles.js";
+
+
 
 export default function Home() {
+  {{
+    console.log("STYLEEEEEEEES")
+    console.log(styles)
+  }}
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home</Text>
