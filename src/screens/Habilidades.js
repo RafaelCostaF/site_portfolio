@@ -1,61 +1,75 @@
 import React from 'react';
-import { Container, Typography, Divider, Grid } from '@mui/material';
+import { Container, Typography, Divider, LinearProgress } from '@mui/material';
 import { styled } from '@mui/system';
-import ImgMediaCard from './ImgMediaCard';
 
-const StyledView = styled('div')({
-  textAlign: 'center',
-  marginTop: '2rem',
+const StyledSkill = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '16px',
 });
 
-const StyledText = styled(Typography)({
+const SkillName = styled(Typography)({
+  marginRight: '16px',
   fontWeight: 'bold',
+  width: '120px', // Define uma largura fixa para os nomes das habilidades
 });
 
-const StyledDivider = styled(Divider)({
-  margin: '2rem 0',
+const SkillProgress = styled(LinearProgress)({
+  flex: 1, // A barra de progresso ocupa o espaço restante
+  height: '24px', // Altura da barra de progresso
+  backgroundColor: '#e0e0e0', // Cor de fundo da barra de progresso
+  borderRadius: '12px', // Borda arredondada
+  overflow: 'hidden', // Oculta o conteúdo que ultrapassa a barra de progresso
+  '& .MuiLinearProgress-bar': {
+    borderRadius: '12px', // Borda arredondada para a barra de preenchimento
+    backgroundImage: 'linear-gradient(45deg, #001f3f, #0066cc)', // Gradiente de cores para o preenchimento
+  },
 });
-
-const skillsRickson = [
-  "Habilidade 1",
-  "Habilidade 2",
-  "Habilidade 3",
-];
-
-const skillsRafael = [
-  "Habilidade A",
-  "Habilidade B",
-  "Habilidade C",
-];
 
 function Habilidades() {
+  // Defina as habilidades de Rickson e Rafael
+  const habilidadesPorPessoa = {
+    Rickson: [
+      { name: 'JavaScript', proficiency: 30 },
+      { name: 'React', proficiency: 20 },
+      { name: 'HTML', proficiency: 30 },
+      { name: 'CSS', proficiency: 20 },
+      { name: 'Python', proficiency: 80 },
+      { name: 'C++', proficiency: 85},
+      { name: 'java', proficiency: 70 },
+      {name: 'Mysql', proficiency: 60}
+      // Adicione mais habilidades conforme necessário
+    ],
+    Rafael: [
+      { name: 'Python', proficiency: 85 },
+      { name: 'Django', proficiency: 75 },
+      { name: 'SQL', proficiency: 80 },
+      { name: 'Java', proficiency: 70 },
+      // Adicione mais habilidades conforme necessário
+    ],
+  };
+
   return (
-    <StyledView>
-      <Container>
-        <StyledText variant="h4" gutterBottom>
-          Habilidades
-        </StyledText>
-        <StyledDivider />
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <ImgMediaCard
-              alt="Rickson"
-              title="Rickson"
-              content={skillsRickson.map((skill) => `- ${skill}\n`)}
-           
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <ImgMediaCard
-              alt="Rafael"
-              title="Rafael"
-              content={skillsRafael.map((skill) => `- ${skill}\n`)}
-              
-            />
-          </Grid>
-        </Grid>
-      </Container>
-    </StyledView>
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Habilidades
+      </Typography>
+      <Divider />
+      {Object.keys(habilidadesPorPessoa).map((pessoa, index) => (
+        <div key={index}>
+          <Typography variant="h5" gutterBottom>
+            Habilidades de {pessoa}:
+          </Typography>
+          {habilidadesPorPessoa[pessoa].map((skill, skillIndex) => (
+            <StyledSkill key={skillIndex}>
+              <SkillName>{skill.name}</SkillName>
+              <SkillProgress variant="determinate" value={skill.proficiency} />
+            </StyledSkill>
+          ))}
+          <Divider />
+        </div>
+      ))}
+    </Container>
   );
 }
 
