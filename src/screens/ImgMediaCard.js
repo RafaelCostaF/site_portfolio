@@ -9,7 +9,7 @@ export default function ImgMediaCard(props) {
       maxWidth: 600,
       borderRadius: 6,
       margin: '0 10px 20px',
-      backgroundColor: "f5f5f5",
+      backgroundColor: "DAC0A3",
       boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
     }}>
       <CardContent>
@@ -37,8 +37,8 @@ export default function ImgMediaCard(props) {
             sx={{ 
               borderRadius: 6, 
               padding: '10px 24px', 
-              backgroundColor: '#f5f5f5', 
-              color: '#021024', // Cor do texto do botão
+              backgroundColor: '#102C57', 
+              color: 'white', // Cor do texto do botão
               '&:hover': {
                 backgroundColor: '#448ACC', // Cor do botão ao passar o mouse
               },

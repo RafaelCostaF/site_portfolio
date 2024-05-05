@@ -2,18 +2,18 @@ import React from 'react';
 import { styled } from '@mui/system';
 import { Container, Typography, Paper, Grid, Button } from '@mui/material';
 import ImgMediaCard from './ImgMediaCard';
-import Background from './Background';
 import { Link } from 'react-router-dom';
 
 const StyledContainer = styled(Container)({
   textAlign: 'center',
   marginTop: '2rem',
+  overflowY: 'auto', 
+  maxHeight: 'calc(100vh - 64px)', 
 });
 
 const StyledText = styled(Typography)({
   fontWeight: 'bold',
 });
-
 
 const StyledDivider = styled('div')({
   margin: '2rem 0',
@@ -24,59 +24,58 @@ const StyledDivider = styled('div')({
 const StyledButton = styled(Button)({
   borderRadius: 16,
   padding: '10px 24px',
-  backgroundColor: '#ddd6cb',
-  color: '#021028', // Cor do texto do botão
+  backgroundColor: '#102C57',
+  color: 'white',
   '&:hover': {
-    backgroundColor: '#448ACC', // Cor do botão ao passar o mouse
+    backgroundColor: '#448ACC',
   },
-  
 });
 
 function Home() {
   return (
-    <Background>
-      <StyledContainer maxWidth="lg">
-        <Paper elevation={3} sx={{ backgroundColor: '#f5f5f5', padding: '2rem' }}> {/* Cor de fundo mais neutra */}
-          <StyledText variant="h6" gutterBottom fontFamily={'Monospaced'} fontSize={'22px'}> {/* Usando a fonte Roboto */}
-            <strong>Boas vindas ao MyPortfolio! </strong>
-          </StyledText>
-          <StyledDivider />
-          <Typography fontFamily='Monospaced' align='center' fontSize={'20px'}> {/* Usando a fonte Roboto */}
-            Seja bem-vindo ao nosso espaço digital, onde compartilhamos nossa jornada, paixões e conquistas.
-            Aqui, você encontrará uma visão detalhada do nosso trabalho e habilidades, tudo reunido em um só lugar para sua exploração.
-          </Typography>
-          <StyledDivider />
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item xs={12} sm={6} md={4}>
-              <Link to="/Projetos" style={{textDecoration: 'none'}}>
-              <ImgMediaCard 
-              action="Projetos"
-              image={process.env.PUBLIC_URL + '/project.svg'}
+    <StyledContainer maxWidth="lg">
+      <Paper elevation={3} sx={{ backgroundColor: '#FEFAF6', padding: '2rem' }}>
+        <StyledText variant="h6" gutterBottom fontFamily={'Monospace'} fontSize={'22px'}>
+          <strong>Boas vindas ao MyPortfolio! </strong>
+        </StyledText>
+        <StyledDivider />
+        <Typography fontFamily='Monospace' align='center' fontSize={'20px'}>
+          Seja bem-vindo ao nosso espaço digital, onde compartilhamos nossa jornada, paixões e conquistas.
+          Aqui, você encontrará uma visão detalhada do nosso trabalho e habilidades, tudo reunido em um só lugar para sua exploração.
+        </Typography>
+        <StyledDivider />
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12} sm={6} md={4}>
+            <Link to="/Projetos" style={{ textDecoration: 'none' }}>
+              <ImgMediaCard
+                action="Projetos"
+                image={process.env.PUBLIC_URL + '/project.svg'}
               />
-              </Link>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-            <Link to="/Sobre" style={{textDecoration: 'none'}}>
-              <ImgMediaCard 
-              action="Sobre nós"
-              image={process.env.PUBLIC_URL + '/people.svg'} />
-              </Link>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-            <Link to="/Habilidades" style={{textDecoration: 'none'}}>
-              <ImgMediaCard action="Habilidades"
-              image={process.env.PUBLIC_URL + '/codes.png'} />
-              </Link>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <Link to="/Contatos" style={{textDecoration: 'none'}}>
-              <StyledButton size='large' fullWidth>Realize seu projeto conosco!</StyledButton> 
-              </Link>
-            </Grid>
+            </Link>
           </Grid>
-        </Paper>
-      </StyledContainer>
-    </Background>
+          <Grid item xs={12} sm={6} md={4}>
+            <Link to="/Sobre" style={{ textDecoration: 'none' }}>
+              <ImgMediaCard
+                action="Sobre nós"
+                image={process.env.PUBLIC_URL + '/people.svg'}
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Link to="/Habilidades" style={{ textDecoration: 'none' }}>
+              <ImgMediaCard action="Habilidades"
+                image={process.env.PUBLIC_URL + '/codes.png'}
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={12} sx={{ textAlign: 'center' }}>
+            <Link to="/Contatos" style={{ textDecoration: 'none' }}>
+              <StyledButton size='large' fullWidth>Realize seu projeto conosco!</StyledButton>
+            </Link>
+          </Grid>
+        </Grid>
+      </Paper>
+    </StyledContainer>
   );
 }
 

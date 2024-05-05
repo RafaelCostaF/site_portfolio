@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Typography, Divider, LinearProgress } from '@mui/material';
+import { Container, Typography, Divider, LinearProgress,Paper } from '@mui/material';
 import { styled } from '@mui/system';
+
 
 const StyledSkill = styled('div')({
   display: 'flex',
@@ -35,9 +36,9 @@ function Habilidades() {
       { name: 'HTML', proficiency: 30 },
       { name: 'CSS', proficiency: 20 },
       { name: 'Python', proficiency: 80 },
-      { name: 'C++', proficiency: 85},
+      { name: 'C++', proficiency: 85 },
       { name: 'java', proficiency: 70 },
-      {name: 'Mysql', proficiency: 60}
+      { name: 'Mysql', proficiency: 60 }
       // Adicione mais habilidades conforme necessário
     ],
     Rafael: [
@@ -50,26 +51,30 @@ function Habilidades() {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Habilidades
-      </Typography>
-      <Divider />
-      {Object.keys(habilidadesPorPessoa).map((pessoa, index) => (
-        <div key={index}>
-          <Typography variant="h5" gutterBottom>
-            Habilidades de {pessoa}:
-          </Typography>
-          {habilidadesPorPessoa[pessoa].map((skill, skillIndex) => (
-            <StyledSkill key={skillIndex}>
-              <SkillName>{skill.name}</SkillName>
-              <SkillProgress variant="determinate" value={skill.proficiency} />
-            </StyledSkill>
-          ))}
-          <Divider />
-        </div>
-      ))}
-    </Container>
+ 
+      <Container  maxWidth="md" sx={{ marginTop: '4rem' }}>
+        <Paper elevation={3} sx={{padding:4, backgroundColor: "#FEFAF6"}}>
+        <Typography variant="h4" gutterBottom>
+          Habilidades
+        </Typography>
+        <Divider />
+        {Object.keys(habilidadesPorPessoa).map((pessoa, index) => (
+          <div key={index}>
+            <Typography variant="h5" gutterBottom>
+              Habilidades de {pessoa}:
+            </Typography>
+            {habilidadesPorPessoa[pessoa].map((skill, skillIndex) => (
+              <StyledSkill key={skillIndex}>
+                <SkillName>{skill.name}</SkillName>
+                <SkillProgress variant="determinate" value={skill.proficiency} />
+              </StyledSkill>
+            ))}
+            <Divider />
+          </div>
+        ))}
+        </Paper>
+      </Container>
+  
   );
 }
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Typography, Paper, Grid, Button } from '@mui/material';
-import Background from './Background';
+
 
 
 function ProjectCard({ title, description, link }) {
@@ -41,7 +41,7 @@ export default function Projetos() {
   ];
 
   return (
-    <Background>
+   
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom>
         Projetos
@@ -58,6 +58,6 @@ export default function Projetos() {
         ))}
       </Grid>
     </Container>
-    </Background>
+
   );
 }
