@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Typography, Paper, Grid, Button } from '@mui/material';
 import Background from './Background';
 
-// Componente de Card para exibir projetos individuais
+
 function ProjectCard({ title, description, link }) {
   return (
     <Paper elevation={3} sx={{ p: 2 }}>
@@ -20,7 +20,7 @@ function ProjectCard({ title, description, link }) {
   );
 }
 
-// Componente da tela de projetos
+
 export default function Projetos() {
   const projects = [
     {

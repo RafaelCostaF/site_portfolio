@@ -31,9 +31,9 @@ export default function ImgMediaCard(props) {
             borderRadius: 6, 
             padding: '10px 24px', 
             backgroundColor: '#f5f5f5', 
-            color: '#021024', // Cor do texto do botão
+            color: '#021024', 
             '&:hover': {
-              backgroundColor: '#448ACC', // Cor do botão ao passar o mouse
+              backgroundColor: '#448ACC', 
             },
           }} 
           fullWidth

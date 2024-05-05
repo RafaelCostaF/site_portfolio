@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Router>
       <div>
-        <AppBar position="static">
+        <AppBar position="static" sx={{color: "secundary"}}>
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Meu Portifolio

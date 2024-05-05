@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importe Link do react-router-dom
+import { Link } from 'react-router-dom'; 
 import { Container, Typography, Button } from '@mui/material';
 
 function NotFoundScreen() {
