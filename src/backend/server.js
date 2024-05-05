@@ -4,10 +4,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// Configurar o body-parser para analisar solicitações JSON
 app.use(bodyParser.json());
 
-// Configurar a conexão com o banco de dados SQLite
 const db = new sqlite3.Database('./contatoDB.sqlite', (err) => {
   if (err) {
     console.error('Erro ao conectar ao banco de dados:', err.message);
@@ -16,7 +14,6 @@ const db = new sqlite3.Database('./contatoDB.sqlite', (err) => {
   }
 });
 
-// Criar a tabela de contatos se não existir
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS contatos (
@@ -28,7 +25,6 @@ db.serialize(() => {
   `);
 });
 
-// Rota para lidar com solicitações de contato
 app.post('/api/contato', (req, res) => {
   const { nome, email, mensagem } = req.body;
   const sql = 'INSERT INTO contatos (nome, email, mensagem) VALUES (?, ?, ?)';
@@ -43,7 +39,6 @@ app.post('/api/contato', (req, res) => {
   });
 });
 
-// Iniciar o servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);

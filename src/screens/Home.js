@@ -5,7 +5,6 @@ import ImgMediaCard from './ImgMediaCard';
 import Background from './Background';
 import { Link } from 'react-router-dom';
 
-
 const StyledContainer = styled(Container)({
   textAlign: 'center',
   marginTop: '2rem',
@@ -50,17 +49,23 @@ function Home() {
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={6} md={4}>
               <Link to="/Projetos" style={{textDecoration: 'none'}}>
-              <ImgMediaCard name={"Projetos"} />
+              <ImgMediaCard 
+              action="Projetos"
+              image={process.env.PUBLIC_URL + '/cube.svg'}
+              />
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
             <Link to="/Sobre" style={{textDecoration: 'none'}}>
-              <ImgMediaCard name={"Sobre nós"} />
+              <ImgMediaCard 
+              action="Sobre nós"
+              image={process.env.PUBLIC_URL + '/cube.svg'} />
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
             <Link to="/Habilidades" style={{textDecoration: 'none'}}>
-              <ImgMediaCard name={"Habilidades"} />
+              <ImgMediaCard action="Habilidades"
+              image={process.env.PUBLIC_URL + '/cube.svg'} />
               </Link>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center' }}>

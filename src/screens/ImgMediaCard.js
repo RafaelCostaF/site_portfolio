@@ -1,11 +1,9 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+import React from 'react';
+import { Card, CardContent, CardMedia, CardActions, Button, Typography } from '@mui/material';
 
 export default function ImgMediaCard(props) {
+  const { alt, title, content, action, image } = props;
+
   return (
     <Card elevation={4} sx={{
       maxWidth: 600,
@@ -17,30 +15,40 @@ export default function ImgMediaCard(props) {
       <CardContent>
         <CardMedia
           component="img"
-          alt="cubo"
+          alt={alt}
           width="192"
-          image={process.env.PUBLIC_URL + '/logo192.png'}
+          image={image}
         />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {content}
+          </Typography>
+        </CardContent>
       </CardContent>
-      <CardActions sx={{ justifyContent: 'center' }}>
-        <Button 
-          size="large" 
-          variant="contained" 
-          color='primary' 
-          sx={{ 
-            borderRadius: 6, 
-            padding: '10px 24px', 
-            backgroundColor: '#f5f5f5', 
-            color: '#021024', 
-            '&:hover': {
-              backgroundColor: '#448ACC', 
-            },
-          }} 
-          fullWidth
-        >
-          {props.name}
-        </Button>
-      </CardActions>
+      {action && (
+        <CardActions sx={{ justifyContent: 'center' }}>
+          <Button 
+            size="large" 
+            variant="contained" 
+            color='primary' 
+            sx={{ 
+              borderRadius: 6, 
+              padding: '10px 24px', 
+              backgroundColor: '#f5f5f5', 
+              color: '#021024', // Cor do texto do botão
+              '&:hover': {
+                backgroundColor: '#448ACC', // Cor do botão ao passar o mouse
+              },
+            }} 
+            fullWidth
+          >
+            {action}
+          </Button>
+        </CardActions>
+      )}
     </Card>
   );
 }

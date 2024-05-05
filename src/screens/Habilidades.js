@@ -1,20 +1,32 @@
 import React from 'react';
-import { Container, Typography, Divider } from '@mui/material';
+import { Container, Typography, Divider, Grid } from '@mui/material';
 import { styled } from '@mui/system';
-
+import ImgMediaCard from './ImgMediaCard';
 
 const StyledView = styled('div')({
   textAlign: 'center',
-  marginTop: '2rem'
+  marginTop: '2rem',
 });
 
 const StyledText = styled(Typography)({
-  fontWeight: 'bold'
+  fontWeight: 'bold',
 });
 
 const StyledDivider = styled(Divider)({
-  margin: '2rem 0'
+  margin: '2rem 0',
 });
+
+const skillsRickson = [
+  "Habilidade 1",
+  "Habilidade 2",
+  "Habilidade 3",
+];
+
+const skillsRafael = [
+  "Habilidade A",
+  "Habilidade B",
+  "Habilidade C",
+];
 
 function Habilidades() {
   return (
@@ -24,10 +36,24 @@ function Habilidades() {
           Habilidades
         </StyledText>
         <StyledDivider />
-        <div>
-          <Typography variant="h6" >Habilidades</Typography>
-          <div style={{ backgroundColor: '#eee' }} />
-        </div>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <ImgMediaCard
+              alt="Rickson"
+              title="Rickson"
+              content={skillsRickson.map((skill) => `- ${skill}\n`)}
+           
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <ImgMediaCard
+              alt="Rafael"
+              title="Rafael"
+              content={skillsRafael.map((skill) => `- ${skill}\n`)}
+              
+            />
+          </Grid>
+        </Grid>
       </Container>
     </StyledView>
   );
