@@ -37,11 +37,11 @@ function Home() {
     <Background>
       <StyledContainer maxWidth="lg">
         <Paper elevation={3} sx={{ backgroundColor: '#f5f5f5', padding: '2rem' }}> {/* Cor de fundo mais neutra */}
-          <StyledText variant="h6" gutterBottom fontFamily={'Roboto'} fontSize={'22px'}> {/* Usando a fonte Roboto */}
+          <StyledText variant="h6" gutterBottom fontFamily={'Monospaced'} fontSize={'22px'}> {/* Usando a fonte Roboto */}
             <strong>Boas vindas ao MyPortfolio! </strong>
           </StyledText>
           <StyledDivider />
-          <Typography fontFamily='Roboto' align='center' fontSize={'20px'}> {/* Usando a fonte Roboto */}
+          <Typography fontFamily='Monospaced' align='center' fontSize={'20px'}> {/* Usando a fonte Roboto */}
             Seja bem-vindo ao nosso espaço digital, onde compartilhamos nossa jornada, paixões e conquistas.
             Aqui, você encontrará uma visão detalhada do nosso trabalho e habilidades, tudo reunido em um só lugar para sua exploração.
           </Typography>
@@ -51,7 +51,7 @@ function Home() {
               <Link to="/Projetos" style={{textDecoration: 'none'}}>
               <ImgMediaCard 
               action="Projetos"
-              image={process.env.PUBLIC_URL + '/cube.svg'}
+              image={process.env.PUBLIC_URL + '/project.svg'}
               />
               </Link>
             </Grid>
@@ -59,13 +59,13 @@ function Home() {
             <Link to="/Sobre" style={{textDecoration: 'none'}}>
               <ImgMediaCard 
               action="Sobre nós"
-              image={process.env.PUBLIC_URL + '/cube.svg'} />
+              image={process.env.PUBLIC_URL + '/people.svg'} />
               </Link>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
             <Link to="/Habilidades" style={{textDecoration: 'none'}}>
               <ImgMediaCard action="Habilidades"
-              image={process.env.PUBLIC_URL + '/cube.svg'} />
+              image={process.env.PUBLIC_URL + '/codes.png'} />
               </Link>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: 'center' }}>
