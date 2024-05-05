@@ -10,7 +10,7 @@ const Gradient = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: #DAC0A3; 
+  background: #EADBC8; 
 `;
 
 function GradientBackground({ children }) {
