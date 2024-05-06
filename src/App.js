@@ -30,7 +30,8 @@ export default function App() {
               to="/" 
               style={{ 
                 color: 'white',
-                textDecoration: 'none' 
+                textDecoration: 'none',
+                paddingLeft: 20
               }}
               sx={{ 
                 flexGrow: 1 
@@ -51,10 +52,10 @@ export default function App() {
               ) : (
                 <>
                   {/* <Button color="inherit" component={Link} to="/" startIcon={<HomeIcon />}>Home</Button> */}
-                  <Button color="inherit" component={Link} to="/sobre" startIcon={<InfoIcon />}>Sobre</Button>
-                  <Button color="inherit" component={Link} to="/projetos" startIcon={<WorkIcon />}>Projetos</Button>
-                  <Button color="inherit" component={Link} to="/habilidades" startIcon={<BuildIcon />}>Habilidades</Button>
-                  <Button color="inherit" component={Link} to="/contatos" startIcon={<ContactMailIcon />}>Contato</Button>
+                  <Button color="inherit" style={{ padding:20 }} component={Link} to="/sobre" startIcon={<InfoIcon />}>Sobre</Button>
+                  <Button color="inherit" style={{ padding:20 }} component={Link} to="/projetos" startIcon={<WorkIcon />}>Projetos</Button>
+                  <Button color="inherit" style={{ padding:20 }} component={Link} to="/habilidades" startIcon={<BuildIcon />}>Habilidades</Button>
+                  <Button color="inherit" style={{ padding:20 }} component={Link} to="/contatos" startIcon={<ContactMailIcon />}>Contato</Button>
                 </>
               )}
             </Toolbar>
