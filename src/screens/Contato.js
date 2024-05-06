@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
-import { Container, Typography, Divider, TextField, Button, Paper } from '@mui/material';
+import { Container, Grid, Typography, Divider, TextField, Button, Paper } from '@mui/material';
 import { styled } from '@mui/system';
-import axios from 'axios';
+// import axios from 'axios';
 
+
+function ListaMensagens({ mensagens }) {
+  return (
+    <div style={{ maxHeight: '250px', width: 'auto', overflowY: 'auto', padding: '20px' }}>
+      {mensagens.map((msg, index) => (
+        <div key={index} style={{ marginBottom: '20px' }}>
+          <div style={{padding:2, display:"inline"}}>
+            <h4 style={{ marginBottom: '0', display:"inline"}}>{msg.nome}</h4>
+          </div>
+
+          <span style={{display: "inline-block", width: "8px",  height: "8px", backgroundColor: "black", borderRadius: "50%", marginRight: "5px"}}></span>
+
+          <div style={{padding:2, display:"inline"}}>
+            <i style={{ marginBottom: '0', display:"inline" }}>{msg.email}</i> 
+          </div>
+          <div>{msg.mensagem}</div>
+          <hr/>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const StyledView = styled('div')({
   textAlign: 'center',
@@ -23,15 +45,43 @@ function Contato() {
   const [mensagem, setMensagem] = useState('');
   const [enviado, setEnviado] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post('/api/contato', { nome, email, mensagem });
-      setEnviado(true);
-    } catch (error) {
-      console.error(error);
-    }
+  const [mensagens, setMensagens] = useState([]);
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post('/api/contato', { nome, email, mensagem });
+  //     setEnviado(true);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+
+  // Função para manipular o envio do formulário
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Evita que o formulário seja enviado de forma padrão
+
+    // Adicionando os dados do formulário a um novo dicionário
+    const novaMensagem = {
+      nome: nome,
+      email: email,
+      mensagem: mensagem
+    };
+
+    // Atualizando o estado da lista de mensagens para incluir a nova mensagem
+    setMensagens([...mensagens, novaMensagem]);
+
+    // Resetando os campos do formulário
+    setNome('');
+    setEmail('');
+    setMensagem('');
+
+    // Definindo o estado como "enviado" para exibir uma mensagem de confirmação
+    setEnviado(true);
   };
+
 
   return (
 
@@ -46,8 +96,16 @@ function Contato() {
             Mande uma mensagem para nós, ficaremos felizes em responder!
           </Typography>
           <StyledDivider />
+          
+
+          <ListaMensagens mensagens={mensagens}/>
+          <StyledDivider/>
+
           {enviado ? (
-            <Typography variant="h6">Mensagem enviada com sucesso!</Typography>
+            <>
+              <Typography variant="h6" style={{marginBottom:20}}>Mensagem enviada com sucesso!</Typography>
+              <Button onClick={()=> setEnviado(false)} variant="contained" color="primary" >Enviar nova mensagem</Button>
+            </>
           ) : (
             <form onSubmit={handleSubmit}>
               <div style={{margin:20}}>
@@ -80,7 +138,7 @@ function Contato() {
                 />
               </div>
               <div style={{ marginTop: '1rem' }}>
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
                   Enviar Mensagem
                 </Button>
               </div>
@@ -88,6 +146,9 @@ function Contato() {
           )}
         </Paper>
       </Container>
+
+      
+      
     </StyledView>
   );
 }

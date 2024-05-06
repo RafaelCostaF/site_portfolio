@@ -59,7 +59,7 @@ export default function Projetos() {
     },
     {
       title: 'Pokemon TCP Server',
-      description: 'Este projeto tem como objetivo recuperar informações sobre as criaturas Pokémon.',
+      description: 'Recuperar informações sobre Pokémons.',
       link: 'https://github.com/Rickson0/PokemonServer',
       image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSexJsJReVXLmTqdNXFkANtYd05LMnvXYsM21W9HLZehw&s"
     },

@@ -25,6 +25,7 @@ db.serialize(() => {
   `);
 });
 
+
 app.post('/api/contato', (req, res) => {
   const { nome, email, mensagem } = req.body;
   const sql = 'INSERT INTO contatos (nome, email, mensagem) VALUES (?, ?, ?)';
@@ -38,6 +39,7 @@ app.post('/api/contato', (req, res) => {
     }
   });
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
