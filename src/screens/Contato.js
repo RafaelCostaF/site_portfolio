@@ -39,6 +39,7 @@ const StyledDivider = styled(Divider)({
   margin: '2rem 0'
 });
 
+
 function Contato() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -51,11 +52,15 @@ function Contato() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:5000/api/contato', { nome, email, mensagem });
+      if ((nome.length == 0) || (email.length == 0) || (mensagem.length == 0)){
+        alert("Preencha todos os campos");
+      }else {
+        await axios.post('http://127.0.0.1:5000/api/contato', { nome, email, mensagem });
 
-      loadMensagens();
-      // Definindo o estado como "enviado" para exibir uma mensagem de confirmação
-      setEnviado(true);
+        loadMensagens();
+        // Definindo o estado como "enviado" para exibir uma mensagem de confirmação
+        setEnviado(true);
+      }
 
     } catch (error) {
       console.error(error);
