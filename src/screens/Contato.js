@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { Container, Grid, Typography, Divider, TextField, Button, Paper } from '@mui/material';
 import { styled } from '@mui/system';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 function ListaMensagens({ mensagens }) {
@@ -48,39 +48,33 @@ function Contato() {
   const [mensagens, setMensagens] = useState([]);
 
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axios.post('/api/contato', { nome, email, mensagem });
-  //     setEnviado(true);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://127.0.0.1:5000/api/contato', { nome, email, mensagem });
 
+      loadMensagens();
+      // Definindo o estado como "enviado" para exibir uma mensagem de confirmação
+      setEnviado(true);
 
-  // Função para manipular o envio do formulário
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Evita que o formulário seja enviado de forma padrão
-
-    // Adicionando os dados do formulário a um novo dicionário
-    const novaMensagem = {
-      nome: nome,
-      email: email,
-      mensagem: mensagem
-    };
-
-    // Atualizando o estado da lista de mensagens para incluir a nova mensagem
-    setMensagens([...mensagens, novaMensagem]);
-
-    // Resetando os campos do formulário
-    setNome('');
-    setEmail('');
-    setMensagem('');
-
-    // Definindo o estado como "enviado" para exibir uma mensagem de confirmação
-    setEnviado(true);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  useEffect(() => {
+    loadMensagens();
+  }, []);
+
+  const loadMensagens = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:5000/api/contatos');
+      setMensagens(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
 
 
   return (
@@ -146,8 +140,6 @@ function Contato() {
           )}
         </Paper>
       </Container>
-
-      
       
     </StyledView>
   );

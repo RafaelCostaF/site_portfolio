@@ -1,9 +1,10 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json());
 
 const db = new sqlite3.Database('./contatoDB.sqlite', (err) => {
@@ -39,6 +40,20 @@ app.post('/api/contato', (req, res) => {
     }
   });
 });
+
+// GET all contacts
+app.get('/api/contatos', (req, res) => {
+  const sql = 'SELECT * FROM contatos';
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      console.error('Erro ao buscar contatos:', err.message);
+      res.status(500).json({ error: 'Erro ao buscar contatos' });
+    } else {
+      res.status(200).json(rows);
+    }
+  });
+});
+
 
 
 const PORT = process.env.PORT || 5000;
