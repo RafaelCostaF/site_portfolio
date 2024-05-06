@@ -50,7 +50,7 @@ function Contato() {
             <Typography variant="h6">Mensagem enviada com sucesso!</Typography>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div>
+              <div style={{margin:20}}>
                 <TextField
                   label="Nome"
                   variant="outlined"
@@ -59,7 +59,7 @@ function Contato() {
                   onChange={(e) => setNome(e.target.value)}
                 />
               </div>
-              <div>
+              <div style={{margin:20}}>
                 <TextField
                   label="E-mail"
                   variant="outlined"
@@ -68,7 +68,7 @@ function Contato() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div>
+              <div style={{margin:20}}>
                 <TextField
                   label="Mensagem"
                   variant="outlined"
