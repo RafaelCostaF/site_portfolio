@@ -9,3 +9,7 @@ Certifique-se de ter o Node.js instalado em sua máquina. Em seguida, siga estas
 - Execute o comando npm install para instalar todas as dependências.
 - Depois que a instalação estiver concluída, execute npm start.
 - O site estará disponível em http://localhost:3000.
+
+## Criadores
+- Rafael da Costa Fonsêca
+- Rickson Alves da Silva
