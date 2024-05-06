@@ -1,5 +1,5 @@
 ## Site Portfolio
-Este projeto é um portfólio pessoal desenvolvido usando [Tecnologia X] para demonstrar minhas habilidades, projetos e experiência.
+Este projeto é um portfólio em dupla desenvolvido usando React para demonstrar nossas habilidades, projetos e experiência.
 
 ## Como Executar
 Certifique-se de ter o Node.js instalado em sua máquina. Em seguida, siga estas etapas:
