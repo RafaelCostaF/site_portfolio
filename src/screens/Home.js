@@ -22,7 +22,7 @@ const StyledDivider = styled('div')({
 });
 
 const StyledButton = styled(Button)({
-  borderRadius: 16,
+  borderRadius: 5,
   padding: '10px 24px',
   backgroundColor: '#102C57',
   color: 'white',

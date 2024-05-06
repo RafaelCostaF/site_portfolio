@@ -43,23 +43,24 @@ function Habilidades() {
     ],
     Rafael: [
       { name: 'Python', proficiency: 85 },
-      { name: 'Django', proficiency: 75 },
-      { name: 'SQL', proficiency: 80 },
-      { name: 'Java', proficiency: 70 },
+      { name: 'FastAPI', proficiency: 75 },
+      { name: 'SQL', proficiency: 75 },
+      { name: 'C', proficiency: 70 },
+      { name: 'C++', proficiency: 70 },
       // Adicione mais habilidades conforme necessário
     ],
   };
 
   return (
  
-      <Container  maxWidth="md" sx={{ marginTop: '4rem' }}>
+      <Container  maxWidth="md" sx={{ marginTop: '4rem', marginBottom:20 }}>
         <Paper elevation={3} sx={{padding:4, backgroundColor: "#FEFAF6"}}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{ marginBottom:20 }}>
           Habilidades
         </Typography>
         <Divider />
         {Object.keys(habilidadesPorPessoa).map((pessoa, index) => (
-          <div key={index}>
+          <div key={index} style={{marginBottom:20}}>
             <Typography variant="h5" gutterBottom>
               Habilidades de {pessoa}:
             </Typography>

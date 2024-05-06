@@ -40,6 +40,12 @@ function ProjectCard({ title, description, link, image }) {
 export default function Projetos() {
   const projects = [
     {
+      title: 'PGCOMP-UFBA - Backend',
+      description: 'Sistema de Monitoramento de Alunos.',
+      link: 'https://github.com/tauanesales/BACK-MATE85-Topicos-em-sistemas-de-informacao-e-web-i/',
+      image: "https://github.com/tauanesales/BACK-MATE85-Topicos-em-sistemas-de-informacao-e-web-i/raw/master/arquitetura_sistema.jpg"
+    },
+    {
       title: 'Mobile - Emprestimo',
       description: 'React Native App Emprestimo',
       link: 'https://github.com/RafaelCostaF/React-Native-APP-Emprestimo',
@@ -69,8 +75,6 @@ export default function Projetos() {
       link: 'https://github.com/Rickson0/compraCerta',
       image:"https://private-user-images.githubusercontent.com/57494016/328062668-c3833570-f6f8-44bc-be41-2ac6ac7d8cf1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ5NTg2MTQsIm5iZiI6MTcxNDk1ODMxNCwicGF0aCI6Ii81NzQ5NDAxNi8zMjgwNjI2NjgtYzM4MzM1NzAtZjZmOC00NGJjLWJlNDEtMmFjNmFjN2Q4Y2YxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA2VDAxMTgzNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFlZGIxMzI4MDkzYTI5YmY3ZjI5YzRmZWQwN2U5OWUzNjJkZDllMjQyNzQ0YjgzY2ZkMzhkNTBkZjI0MTNhMmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.fNGkBaD3kMcYX2oCOuG3XWnDJMkHoqljrnQcDA0rGv4"
     },
-
-    
   ];
 
   return (

@@ -24,9 +24,20 @@ export default function App() {
         <div>
           <AppBar position="relative" sx={{ backgroundColor:"#102C57"}}>
             <Toolbar>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Meu Portifolio
-              </Typography>
+            <Typography 
+              variant="h6" 
+              component={Link} 
+              to="/" 
+              style={{ 
+                color: 'white',
+                textDecoration: 'none' 
+              }}
+              sx={{ 
+                flexGrow: 1 
+              }}
+            >
+              Meu Portifolio
+            </Typography>
               {isMobile ? (
                 <IconButton
                   color="inherit"
@@ -39,7 +50,7 @@ export default function App() {
                 </IconButton>
               ) : (
                 <>
-                  <Button color="inherit" component={Link} to="/" startIcon={<HomeIcon />}>Home</Button>
+                  {/* <Button color="inherit" component={Link} to="/" startIcon={<HomeIcon />}>Home</Button> */}
                   <Button color="inherit" component={Link} to="/sobre" startIcon={<InfoIcon />}>Sobre</Button>
                   <Button color="inherit" component={Link} to="/projetos" startIcon={<WorkIcon />}>Projetos</Button>
                   <Button color="inherit" component={Link} to="/habilidades" startIcon={<BuildIcon />}>Habilidades</Button>
