@@ -13,3 +13,5 @@ Certifique-se de ter o Node.js instalado em sua máquina. Em seguida, siga estas
 ## Criadores
 - Rafael da Costa Fonsêca
 - Rickson Alves da Silva
+
+![image](https://github.com/RafaelCostaF/site_portfolio/assets/57494016/9729c604-ac43-4dcc-bd13-e711c7f96820)
